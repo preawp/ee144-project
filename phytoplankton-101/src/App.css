@@ -1,0 +1,124 @@
+/* App.css */
+
+/* General styles */
+body {
+  font-family: 'DM Serif Display', serif;
+  letter-spacing: 0.3px;
+  background: linear-gradient(
+      45deg,
+      #f9f9f9 25%,
+      transparent 25%,
+      transparent 75%,
+      #f9f9f9 75%
+    ),
+    linear-gradient(45deg, #f9f9f9 25%, transparent 25%, transparent 75%, #f9f9f9 75%);
+  background-size: 20px 20px;
+}
+
+/* Main container */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Quiz container */
+.Quiz {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff8a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input box */
+input[type='text'] {
+  width: calc(100% - 24px);
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+}
+
+input[type='text']:focus {
+  outline: none;
+  border-color: #35d2b0;
+}
+
+/* Buttons */
+.App-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  background-color: #62c3de;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.App-button:hover {
+  background-color: #5cccd0;
+  transform: translateY(-2px);
+}
+
+/* Quiz question styles */
+.Quiz-question {
+  text-align: center;
+}
+
+/* Quiz options styles */
+.Quiz-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Quiz-options .App-button {
+  margin-bottom: 10px;
+}
+/* ... Your existing styles ... */
+
+/* Bubble effect */
+body {
+  font-family: 'DM Serif Display', serif;
+  letter-spacing: 0.3px;
+  background: linear-gradient(
+      45deg,
+      #f9f9f9 25%,
+      transparent 25%,
+      transparent 75%,
+      #f9f9f9 75%
+    ),
+    linear-gradient(45deg, #f9f9f9 25%, transparent 25%, transparent 75%, #f9f9f9 75%);
+  background-size: 20px 20px;
+  position: relative;
+}
+
+/* Create bubble effect */
+@keyframes bubble {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+/* Bubble pseudo-element */
+body::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #fff 10%, transparent 20%) repeat;
+  animation: bubble 30s linear infinite;
+  z-index: -1;
+}
